@@ -1,0 +1,9 @@
+{
+    "status": true,
+    "message": "User login successful",
+    "data": {
+        "userId": "abhiniet4@gmail.com",
+        "token": "ab123ab12345",
+        "userType": "User"
+    }
+}
