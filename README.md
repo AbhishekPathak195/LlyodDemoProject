@@ -5,9 +5,9 @@ Showing list data using demo API with image and description that demonstrates th
 
 ## Features
 
-1. **Clean Architecture:** The App is structured using clean Arch principles, with a clear separation of layers: Presentation, Domain and Data. This promotes scalability, maintainability and testability of the code.
+1. **Clean Architecture:** The App is structured using clean architecture principles, with a clear separation of layers: Presentation, Domain and Data. This promotes scalability, maintainability and testability of the code.
 2. **MVVM Architecture:** The app follows the MVVM (Model-View-ViewModel) architecture, separating concerns between the UI(View), business logic (ViewModel) and data (Model).
-3. **Coroutines:** A coroutine is a concurrency design pattern that you can use on Android to simplify code that executes asynchronously.
+3. **Coroutines:** A coroutine is a concurrency design pattern that we can use on Android to simplify code that executes asynchronously.
 4. **Retrofit2:** A popular HTTP client for Android, to make API call, this ensures efficient communication with the backend server.
 5. **Kotlin flows:** In coroutines, a flow is a type that can emit multiple values sequentially, as opposed to suspend functions that return only a single value.
 6. **Jetpack Compose:** Jetpack Compose is Android's recommended modern toolkit for building native UI. It simplifies and accelerates UI development on Android.
