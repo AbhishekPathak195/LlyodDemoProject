@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Demo Project</string>
+    <string name="app_name">Demo App</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="login_title"> Demo App </string>
