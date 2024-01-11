@@ -12,7 +12,7 @@ Showing list data using demo API with image and description that demonstrates th
 5. **Kotlin flows:** In coroutines, a flow is a type that can emit multiple values sequentially, as opposed to suspend functions that return only a single value.
 6. **Jetpack Compose:** Jetpack Compose is Android's recommended modern toolkit for building native UI. It simplifies and accelerates UI development on Android.
 7. **Hilt Dependency Injection:** Hilt is a dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in the project.
-8. **Mockk:** MockK works great with Android and allows you to mock objects in both your Android unit tests and instrumented tests.
+8. **MockK:** MockK works great with Android and allows you to mock objects in both your Android unit tests and instrumented tests.
 9. **Compose Testing:** UI testing in Jetpack Compose focuses on verifying the behavior and appearance of UI components, ensuring they function as intended.
 
 ## App Screens
