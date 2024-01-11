@@ -1,5 +1,5 @@
 
-# Android Demo App with API List Data
+# Android Demo App with Dynamic List Data
 
 Showing list data using demo API with image and description that demonstrates the use of MVVM Clean Architecture principle, Retrofit for API communication, Coroutines, Kotlin-flow, Jetpack Components, Jetpack Compose, Hilt Dependency Injection, Mockk, Compose Testing and Data Binding for seamless UI updates.
 
