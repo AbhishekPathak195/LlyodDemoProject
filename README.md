@@ -1,9 +1,9 @@
 
-#Android Demo App with API List Data
+# Android Demo App with API List Data
 
 Showing list data using demo API with image and description that demonstrates the use of MVVM Clean Architecture principle, Retrofit for API communication, Coroutines, Kotlin-flow, Jetpack Components, Jetpack Compose, Hilt Dependency Injection, Mockk, Compose Testing and Data Binding for seamless UI updates.
 
-#Features
+# Features
 
 1- Clean Architecture: The App is structured using clean Arch principles, with a clear separation of layers: Presentation, Domain and Data. This promotes scalability, maintainability and testability of the code.
 2- MVVM Architecture: The app follows the MVVM (Model-View-ViewModel) architecture, separating concerns between the UI(View), business logic (ViewModel) and data (Model).
