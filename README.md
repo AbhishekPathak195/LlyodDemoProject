@@ -21,6 +21,10 @@ Showing list data using demo API with image and description that demonstrates th
 2. *Login Screen*
 3. *Dashboard Screen with List data*
 
+## Screenshot
+
+<img width="425" alt="mobileScreenShot" src="https://github.com/AbhishekPathak195/LlyodDemoProject/blob/master/screenshot/demo_app_screens.jpg">
+
 
 
 
