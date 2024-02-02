@@ -23,7 +23,7 @@ Showing list data using demo API with image and description that demonstrates th
 
 ## Screenshot
 
-<img width="425" alt="mobileScreenShot" src="https://github.com/AbhishekPathak195/LlyodDemoProject/blob/master/screenshot/demo_app_screens.jpg">
+<img width="425" alt="mobileScreenShot" src="https://github.com/AbhishekPathak195/LlyodDemoProject/blob/master/screenshot/demo_app_screen.png">
 
 
 
