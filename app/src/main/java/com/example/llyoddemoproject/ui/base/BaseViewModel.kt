@@ -1,67 +1,31 @@
 package com.example.llyoddemoproject.ui.base
 
-import androidx.annotation.VisibleForTesting
-import androidx.annotation.VisibleForTesting.Companion.PRIVATE
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.llyoddemoproject.data.network.DataError
-import com.example.llyoddemoproject.data.network.Resource
-import com.example.llyoddemoproject.data.network.Success
-import com.example.llyoddemoproject.util.SOMETHING_WENT_WRONG
-import com.example.llyoddemoproject.util.coroutines.DispatcherProvider
-import kotlinx.coroutines.CoroutineExceptionHandler
+import androidx.lifecycle.*
+import com.example.llyoddemoproject.data.model.RequestException
+import java.net.HttpURLConnection
 
-open class BaseViewModel<T>(
-     val anyType:T,
-) : ViewModel() {
+open class BaseViewModel : LifecycleObserver, ViewModel() {
 
-    @VisibleForTesting(otherwise = PRIVATE)
-    val showDialogLoadingPrivate = MutableLiveData(false)
+    val loading: LiveData<Boolean>
+        get() = _loading.distinctUntilChanged()
 
-    val showMessageDialog = MutableLiveData<Resource<String>>()
+    private val _loading: MutableLiveData<Boolean> = MutableLiveData()
+    val unauthorized: LiveData<Boolean> get() = _unauthorized
+    private val _unauthorized: MutableLiveData<Boolean> = MutableLiveData()
 
-    private val onErrorDialogDismissPrivate = MutableLiveData<Resource<Boolean>>()
-    val onErrorDialogDismiss: LiveData<Resource<Boolean>> get() = onErrorDialogDismissPrivate
+    val error: LiveEvent<String> get() = _error
+    private val _error: LiveEvent<String> = LiveEvent()
 
-    protected val exceptionHandler = CoroutineExceptionHandler { context, exception ->
-        hideLoading()
-        showMessageDialog(DataError(SOMETHING_WENT_WRONG))
-
+    protected fun onCallError(error: Throwable) {
+        checkIsUnauthorized(error)
+        setError(error.message.orEmpty())
     }
 
-    fun isLoading(): Boolean {
-        return showDialogLoadingPrivate.value!!
-    }
-
-
-    fun showLoading() {
-        if (!showDialogLoadingPrivate.value!!) {
-            showDialogLoadingPrivate.value = true
-        }
-
-    }
-
-    fun hideLoading() {
-        if (showDialogLoadingPrivate.value!!) {
-            showDialogLoadingPrivate.value = false
+    protected fun setLoading(isLoading: Boolean) = _loading.postValue(isLoading)
+    protected fun setError(errorMessage: String) = _error.postValue(errorMessage)
+    private fun checkIsUnauthorized(error: Throwable) {
+        if (error is RequestException && error.code == HttpURLConnection.HTTP_UNAUTHORIZED) {
+            _unauthorized.postValue(true)
         }
     }
-
-    fun showMessageDialog(dataError: DataError<String>) {
-        showMessageDialog.value = dataError
-    }
-
-    fun showPostMessageDialog(dataError: DataError<String>) {
-        showMessageDialog.value = dataError
-    }
-
-    fun hideMessageDialog(success: Success<String>) {
-        showMessageDialog.value = success
-
-    }
-
-
-
 }
-

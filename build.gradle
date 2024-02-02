@@ -9,6 +9,7 @@ buildscript {
         hilt_version ='2.44.2'
         room_version = "2.5.0"
         coil_compose = '1.4.0'
+        navigation_compose = '1.0.0-alpha03'
     }
     repositories {
         google()
